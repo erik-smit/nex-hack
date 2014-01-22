@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libarchive" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="lib/archive" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-DHAVE_CONFIG_H" />
+		</Compiler>
+		<Unit filename="src/archive.h" />
+		<Unit filename="src/archive_acl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_acl_private.h" />
+		<Unit filename="src/archive_check_magic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_cmdline.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_cmdline_private.h" />
+		<Unit filename="src/archive_crc32.h" />
+		<Unit filename="src/archive_crypto.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_crypto_private.h" />
+		<Unit filename="src/archive_endian.h" />
+		<Unit filename="src/archive_entry.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_entry.h" />
+		<Unit filename="src/archive_entry_copy_bhfi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_entry_copy_stat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_entry_link_resolver.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_entry_locale.h" />
+		<Unit filename="src/archive_entry_private.h" />
+		<Unit filename="src/archive_entry_sparse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_entry_stat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_entry_strmode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_entry_xattr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_getdate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_match.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_options.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_options_private.h" />
+		<Unit filename="src/archive_pathmatch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_pathmatch.h" />
+		<Unit filename="src/archive_platform.h" />
+		<Unit filename="src/archive_ppmd7.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_ppmd7_private.h" />
+		<Unit filename="src/archive_ppmd_private.h" />
+		<Unit filename="src/archive_private.h" />
+		<Unit filename="src/archive_rb.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_rb.h" />
+		<Unit filename="src/archive_read.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_append_filter.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_data_into_fd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_disk_entry_from_file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_disk_posix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_disk_private.h" />
+		<Unit filename="src/archive_read_disk_set_standard_lookup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_disk_windows.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_extract.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_open_fd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_open_file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_open_filename.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_open_memory.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_private.h" />
+		<Unit filename="src/archive_read_set_format.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_set_options.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_filter_all.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_filter_bzip2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_filter_compress.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_filter_grzip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_filter_gzip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_filter_lrzip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_filter_lzop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_filter_none.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_filter_program.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_filter_rpm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_filter_uu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_filter_xz.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_7zip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_all.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_ar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_by_code.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_cab.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_cpio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_empty.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_iso9660.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_lha.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_mtree.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_rar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_raw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_tar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_xar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_read_support_format_zip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_string.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_string.h" />
+		<Unit filename="src/archive_string_composition.h" />
+		<Unit filename="src/archive_string_sprintf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_virtual.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_windows.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_windows.h" />
+		<Unit filename="src/archive_write.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter_b64encode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter_by_name.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter_bzip2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter_compress.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter_grzip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter_gzip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter_lrzip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter_lzop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter_none.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter_program.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter_uuencode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_add_filter_xz.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_disk_acl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_disk_posix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_disk_private.h" />
+		<Unit filename="src/archive_write_disk_set_standard_lookup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_disk_windows.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_open_fd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_open_file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_open_filename.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_open_memory.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_private.h" />
+		<Unit filename="src/archive_write_set_format.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_7zip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_ar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_by_name.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_cpio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_cpio_newc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_gnutar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_iso9660.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_mtree.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_pax.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_raw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_shar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_ustar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_v7tar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_xar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_format_zip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/archive_write_set_options.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/config.h" />
+		<Unit filename="src/config_freebsd.h" />
+		<Unit filename="src/filter_fork.h" />
+		<Unit filename="src/filter_fork_posix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/filter_fork_windows.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
