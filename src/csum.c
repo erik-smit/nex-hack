@@ -27,6 +27,8 @@
 
 #include "config.h"
 
+#include <endian.h>
+
 #include "csum.h"
 
 // I suspect we may add other checksum/crc functions here
