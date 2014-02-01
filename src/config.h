@@ -31,6 +31,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <inttypes.h>
 
 
 #if	defined(__POCC__)	// POCC lib use '_function' for POSIX 'function'
