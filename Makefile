@@ -15,7 +15,7 @@ TARGET   = fwtool
 
 CC       = gcc
 # compiling flags here
-CFLAGS   = -std=c99 -Wall -DNDEBUG -DIOAPI_NO_64 -DFWT_CONSOLE
+CFLAGS   = -std=c99 -Wall -DNDEBUG -DIOAPI_NO_64 -DFWT_CONSOLE -D__USE_BSD
 
 LINKER   = gcc -o
 # linking flags here
