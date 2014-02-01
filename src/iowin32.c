@@ -462,5 +462,4 @@ void fill_win32_filefunc64W(zlib_filefunc64_def* pzlib_filefunc_def)
     pzlib_filefunc_def->opaque = NULL;
 }
 
-#endif
-## defined(_WIN32) 
+#endif // defined(_WIN32)
