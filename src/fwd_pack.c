@@ -483,12 +483,15 @@ find_firmware_dat_in_zipfile(const char *fname_zip, char *p_fname_outbuf, int sz
 	if (!(zh = zipfile_open(fname_zip))) {
 		return 1;
 	}
+        printf("opened\n");
 	if ((ret = zipfile_find_first(zh, l_fname, sizeof(l_fname)-1, NULL, NULL))) {
 		zipfile_close(zh);
 		return 1;
 	}
+        printf("first_find\n");
 	while(ret == 0) {
 		// look for file that starts with "FirmwareData" and ends with ".dat"
+                printf("looking\n");
 		if ((p_fwdata = strstr(l_fname, FWD_NAME_PREFIX))) {
 			if (!strchr(p_fwdata, '/') && (p_ext = strstr(p_fwdata, FWD_NAME_SUFFIX))) {
 				len = strlen(l_fname);

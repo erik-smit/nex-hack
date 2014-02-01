@@ -34,14 +34,10 @@
 
 
 #ifdef	ZIPFILE_C	// internal to zipfile.c
-	#define	ZIP_IOBUF_SIZE	1048576
+	#define	ZIP_IOBUF_SIZE	10240
 
 	typedef struct t_zip_handle_struct {
-		unzFile	uf;
-	    unz_global_info64 gi;
-		unz_file_info64 file_info;
-
-		int	next_idx;
+	                struct archive *a;
 	} zip_handle_struct;
 #endif
 
