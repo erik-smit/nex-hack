@@ -33,7 +33,7 @@
 
 #include "config.h"
 #include "fwt_util.h"
-#include "contrib/minizip/unzip.h"
+#include "unzip.h"
 #include "zipfile.h"
 
 /* // for date&time
