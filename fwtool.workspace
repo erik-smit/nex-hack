@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_workspace_file>
-	<Workspace title="Workspace">
-		<Project filename="fwtoolGUI/fwtoolGUI.cbp" />
-		<Project filename="fwtool/fwtool.cbp" />
-		<Project filename="libarchive/libarchive.cbp" />
-		<Project filename="zlib/zlib.cbp" />
-	</Workspace>
-</CodeBlocks_workspace_file>

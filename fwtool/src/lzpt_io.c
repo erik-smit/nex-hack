@@ -32,7 +32,6 @@
 #include "fwt_names.h"
 #include "fwt_util.h"
 
-#include "endian.h"
 #include "lz77.h"
 
 #include "lzpt_io.h"
@@ -68,7 +67,7 @@ lzpt_read_toc(FILE *fh_in, unsigned char **pp_toc, int *pnum_entries, int *pmax_
 	//added by kenan: LZTP 0x10 mxdblksz=64k, 0x11 =128k (used by EA50, FS700)
 	fseek(fh_in, LZPT_VERSION_OFS, SEEK_SET);
 	fread(iobuf, sizeof(unsigned int), 1, fh_in);
-	lztp_version = readLE32(iobuf);
+	lztp_version = le32toh(*(uint32_t *)iobuf);
 	switch (lztp_version) {
 		case 0x00000010:
 			if (pmax_dblksz) *pmax_dblksz = LZPT_MAX_DECOMP_BLOCK_SIZE_VER10;
@@ -83,11 +82,11 @@ lzpt_read_toc(FILE *fh_in, unsigned char **pp_toc, int *pnum_entries, int *pmax_
 
 	fseek(fh_in, LZPT_TOC_OFFSET_OFS, SEEK_SET);
 	fread(iobuf, sizeof(unsigned int), 1, fh_in);
-	toc_offset = readLE32(iobuf);
+	toc_offset = le32toh(*(uint32_t *)&iobuf);
 
 	fseek(fh_in, LZPT_TOC_SIZE_OFS, SEEK_SET);
 	fread(iobuf, sizeof(unsigned int), 1, fh_in);
-	toc_size = readLE32(iobuf);
+	toc_size = le32toh(*(uint32_t *)&iobuf);
 
 	toc_nentries = (toc_size/(2 * sizeof(unsigned int)));
 
@@ -130,8 +129,8 @@ lzpt_read_block(FILE *fh_in, int block_num, unsigned char *p_toc, size_t toc_ent
 	}
 	toc_offset = (block_num * (sizeof(unsigned int) * 2));
 
-	entry_offset = readLE32(p_toc+toc_offset);
-	entry_size = readLE32(p_toc+toc_offset+4);
+	entry_offset = le32toh(*(uint32_t *)(p_toc+toc_offset));
+	entry_size = le32toh(*(uint32_t *)(p_toc+toc_offset+4));
 
 	if (!(p_block = malloc(entry_size))) {
 		fprintf(stderr, "lzpt_read_block(): allocation error!\n");

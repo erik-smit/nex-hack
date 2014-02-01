@@ -28,7 +28,6 @@
 #include "config.h"
 #include "fwt_util.h"
 
-#include "endian.h"
 #include "csum.h"
 #include "fdat_cipher.h"
 
@@ -175,9 +174,9 @@ fdat_decrypt_buffer(unsigned char *p_fdat_encrypted, size_t sz_fdat_encrypted, u
 
 		// ((block_hdr[3] << 8) | block_hdr[2]) is the # of bytes to write
 		// high bit of block_hdr[3] indicates last block?
-		block_hdr_csum = readLE16((u8 *)&p_blk_hdr->hdr_csum);
+		block_hdr_csum = le16toh(*(uint16_t *)&p_blk_hdr->hdr_csum);
 
-		block_hdr_len_and_flags = readLE16((u8 *)&p_blk_hdr->hdr_len_and_flags);
+		block_hdr_len_and_flags = le16toh(*(uint16_t *)&p_blk_hdr->hdr_len_and_flags);
 		last_block = ((block_hdr_len_and_flags & 0x8000) != 0);
 
 		this_len_decrypted = (block_hdr_len_and_flags & 0xfff);
@@ -327,9 +326,9 @@ fdat_decrypt_file(const char *fdat_in_fname, const char *fdat_out_fname, FDC_MET
 
 		// ((block_hdr[3] << 8) | block_hdr[2]) is the # of bytes to write
 		// high bit of block_hdr[3] indicates last block?
-		block_hdr_csum = readLE16((u8 *)&p_blk_hdr->hdr_csum);
+		block_hdr_csum = le16toh(*(uint16_t *)&p_blk_hdr->hdr_csum);
 
-		block_hdr_len_and_flags = readLE16((u8 *)&p_blk_hdr->hdr_len_and_flags);
+		block_hdr_len_and_flags = le16toh(*(uint16_t *)&p_blk_hdr->hdr_len_and_flags);
 		// last_block = ((block_hdr_len_and_flags & 0x8000) != 0);
 
 		this_len_decrypted = (block_hdr_len_and_flags & 0xfff);

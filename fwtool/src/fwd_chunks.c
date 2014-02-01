@@ -32,7 +32,6 @@
 #include "fwt_util.h"
 #include "fwd_chunks.h"
 
-#include "endian.h"
 
 #include "zlib.h"	// for crc-32
 
@@ -105,7 +104,7 @@ _fwdata_do_unpack(const char *fname_fwdata_in, const char *single_chunk_id, cons
 	int	retval;
 	FWD_CHUNK_HDR	chunk_hdr;
 	char	fname_buf[_TMP_FNAME_BUFLEN];
-	u32	chunk_len;
+	uint32_t chunk_len;
 	char	chunk_id[sizeof(chunk_hdr.chunk_id)+1];
 
 	if (!(fh_in = fopen(fname_fwdata_in, "rb"))) {
@@ -169,7 +168,7 @@ _fwdata_do_unpack(const char *fname_fwdata_in, const char *single_chunk_id, cons
 			fprintf(stderr, "fwdata_unpack_chunks(): Error reading chunk header!\n");
 			goto exit_err;
 		}
-		chunk_len = readBE32(chunk_hdr.chunk_len_BE_bytes);
+		chunk_len = be32toh(*(uint32_t *)&chunk_hdr.chunk_len_BE_bytes);
 
 		memset(chunk_id, 0, sizeof(chunk_id));
 		sprintf(chunk_id, "%.*s", sizeof(chunk_hdr.chunk_id), chunk_hdr.chunk_id);

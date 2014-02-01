@@ -406,7 +406,7 @@ _zipfile_extract_current_entry(zip_handle zh, char *dirname_out, char *p_fname_b
 		}
 
 		if (err==UNZ_OK) {
-			fout=fopen64(write_filename,"wb");
+			fout=fopen(write_filename,"wb");
 
 			/* some zipfile don't contain directory alone before file */
 			if ((fout==NULL) && (filename_withoutpath!=(char*)filename_inzip)) {
@@ -420,14 +420,14 @@ _zipfile_extract_current_entry(zip_handle zh, char *dirname_out, char *p_fname_b
 					mkdir(l_write_filename);
 					*(filename_withoutpath-1)=c;
 					sprintf(l_write_filename,"%s/%s", dirname_out, filename_inzip);
-					fout=fopen64(l_write_filename,"wb");
+					fout=fopen(l_write_filename,"wb");
 				}
 				else {
 					sprintf(plog_global, "Creating directory (from path): %s\n",write_filename); log_it(plog_global);
 					//(void)mkdir(write_filename, 0777);
 					mkdir(write_filename);
 					*(filename_withoutpath-1)=c;
-					fout=fopen64(write_filename,"wb");
+					fout=fopen(write_filename,"wb");
 				}
 			}
 

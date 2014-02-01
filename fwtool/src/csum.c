@@ -26,7 +26,6 @@
 //
 
 #include "config.h"
-#include "endian.h"
 
 #include "csum.h"
 
@@ -40,7 +39,7 @@ calc_csum_16bitLE_words(unsigned short *p16, int nwords)
 	unsigned short	calc_csum = 0;
 
 	while(nwords--) {
-		calc_csum += readLE16((unsigned char *)p16++);
+		calc_csum += le16toh(*(uint16_t *)p16++);
 	}
 	return calc_csum;
 }

@@ -232,8 +232,8 @@ _tarfile_extract_create_dir(char *path)
 			return r;
 	}
 	// FIXME: try real mode here??
-	//if (mkdir(path, 0777) == 0) {
-	if (mkdir(path) == 0) {
+	if (mkdir(path, 0777) == 0) {
+	//if (mkdir(path) == 0) {
 		return 0;
 	}
 
@@ -472,8 +472,8 @@ tarfile_extract_all(const char *fname_tar, const char *dirname_out, int show_ext
 		goto exit_err;
 	}
 
-	//(void)mkdir(dirname_out, 0777);
-	mkdir(dirname_out);
+	(void)mkdir(dirname_out, 0777);
+	//mkdir(dirname_out);
 	while(1) {
 		ret = archive_read_next_header(th->a, &entry);
 		if (ret == ARCHIVE_EOF) {
