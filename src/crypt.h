@@ -27,9 +27,9 @@
    Encryption is not supported.
 */
 
-#define Z_PREFIX
+#define Z_PREFIX 1
 
-#include "zconf.h"
+#include <zconf.h>
 
 #define CRC32(c, b) ((*(pcrc_32_tab+(((int)(c) ^ (b)) & 0xff))) ^ ((c) >> 8))
 
