@@ -6,3 +6,19 @@ before_install:
  - sudo apt-get update -qq
  - sudo apt-get install -qq libarchive-dev zlib1g-dev
 script: make
+
+env:
+  global:
+   # The next declration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "rtN28HZB38lj1b0eQ7qqLCQG2cD8AQJkIne2EBvFAVR34zQibLGusWfeDsR+z3lahF7cnbni+wh+nrP45Q+dYk8iYExq6SQjWBkTG35PdmHGAR2Sm9rjX4/SKtUdxNTOl45LAyZBIi4tFS5OPjjrp6tAjrAOD057PC2cw6Pmzrc="
+
+addons:
+  coverity_scan:
+    project:
+      name: "erik-smit/nex-hack"
+      description: "Your project description here"
+    notification_email: zoiah@zoiah.net
+    build_command_prepend:
+    build_command: "make"
+    branch_pattern: master
